@@ -1,0 +1,35 @@
+name: Python Script Schedule Run                          
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 14,28 * *"
+    
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Checking out repo
+      uses: actions/checkout@v3
+      
+    - name: Setting up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11.7"
+        
+    - name: Removing previous Chrome
+      run: sudo apt purge google-chrome-stable  
+  
+    - name: Installing packages
+      run: pip install selenium beautifulsoup4 requests google-cloud-storage pyvirtualdisplay
+      
+    - name: Installing xvfb
+      run: sudo apt-get install xvfb
+
+    - name: Running Python script
+      env:  
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}  
+          GCP_BLOB_KEY_JSON: ${{ secrets.GCP_BLOB_KEY_JSON }} 
+      run: python "Monitor Packshots - USHOP.py"
+      
