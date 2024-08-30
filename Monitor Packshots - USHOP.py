@@ -120,15 +120,15 @@ driver.close()
 sender_email = "shithi30@gmail.com"
 recivr_email = ["shithi30@outlook.com"]
 
-# # object
-# msg = MIMEMultipart()
-# msg["Subject"] = "USHOP Packshots"
-# msg["From"] = "Shithi Maitra"
-# msg["To"] = ", ".join(recivr_email)
+# object
+msg = MIMEMultipart()
+msg["Subject"] = "USHOP Packshots"
+msg["From"] = "Shithi Maitra"
+msg["To"] = ", ".join(recivr_email)
 
-# # body
-# body = '''New packshots identified, please see attachments.<br><br>Thanks,<br>Shithi Maitra<br>Ex Asst. Manager, CS Analytics<br>Unilever BD Ltd.<br>'''
-# msg.attach(MIMEText(body, "html"))
+# body
+body = '''New packshots identified, please see attachments.<br><br>Thanks,<br>Shithi Maitra<br>Ex Asst. Manager, CS Analytics<br>Unilever BD Ltd.<br>'''
+msg.attach(MIMEText(body, "html"))
 
 # # attach
 # files_to_attach = [filename for filename in os.listdir() if filename.endswith(".jpg")]
