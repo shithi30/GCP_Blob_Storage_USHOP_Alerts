@@ -3,6 +3,7 @@ from google.cloud import storage
 import os
 import json
 import time
+from pyvirtualdisplay import Display
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
@@ -59,8 +60,11 @@ empty_bucket("bucket_packshots_present")
 # existing packshots
 packshots_historical = list_blobs("bucket_packshots_historical")
 
-# open window
+# setup
+Display(visible = 0, size = (1920, 1080)).start() 
 options = webdriver.ChromeOptions().add_argument("ignore-certificate-errors")
+
+# open window
 driver = webdriver.Chrome(options = options)
 driver.maximize_window()
 
