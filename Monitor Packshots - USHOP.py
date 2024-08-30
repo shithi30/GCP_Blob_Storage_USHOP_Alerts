@@ -72,13 +72,11 @@ while(1):
 
     # page
     sku_count = len(soup)
-    if sku_count == 0: break 
-    # if pg == 2: break
+    if sku_count == 0: break
     print("Scraping from page: " + str(pg))
     
     # scrape
     for i in range(0, sku_count):
-    # for i in range(0, 9):
         
         # url
         try: url = "https:" + soup[i]["src"]
@@ -102,7 +100,7 @@ while(1):
             print("New packshot: " + url)
             upload_url_blob(url, "bucket_packshots_new", packshot_now)
             upload_url_blob(url, "bucket_packshots_historical", packshot_now)
-            # download_blob("bucket_packshots_new", packshot_now, packshot_now)
+            download_blob("bucket_packshots_new", packshot_now, packshot_now)
 
 # close window
 driver.close()
