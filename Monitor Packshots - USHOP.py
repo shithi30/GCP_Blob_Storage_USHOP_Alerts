@@ -128,16 +128,16 @@ msg["To"] = ", ".join(recivr_email)
 body = '''New packshots identified, please see attachments.<br><br>Thanks,<br>Shithi Maitra<br>Ex Asst. Manager, CS Analytics<br>Unilever BD Ltd.<br>'''
 msg.attach(MIMEText(body, "html"))
 
-# attach
-files_to_attach = [filename for filename in os.listdir() if filename.endswith(".jpg")]
-for file_path in files_to_attach:
-    part = MIMEBase("application", "octet-stream")
-    with open(file_path, "rb") as attachment: part.set_payload(attachment.read())
-    encoders.encode_base64(part)
-    part.add_header("Content-Disposition", f"attachment; filename= {os.path.basename(file_path)}")
-    msg.attach(part)
+# # attach
+# files_to_attach = [filename for filename in os.listdir() if filename.endswith(".jpg")]
+# for file_path in files_to_attach:
+#     part = MIMEBase("application", "octet-stream")
+#     with open(file_path, "rb") as attachment: part.set_payload(attachment.read())
+#     encoders.encode_base64(part)
+#     part.add_header("Content-Disposition", f"attachment; filename= {os.path.basename(file_path)}")
+#     msg.attach(part)
 
-# send
-with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-    server.login(sender_email, os.getenv("EMAIL_PASS"))
-    if len(files_to_attach) > 0: server.sendmail(sender_email, recivr_email, msg.as_string())
+# # send
+# with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+#     server.login(sender_email, os.getenv("EMAIL_PASS"))
+#     if len(files_to_attach) > 0: server.sendmail(sender_email, recivr_email, msg.as_string())
