@@ -1,6 +1,7 @@
 # import
 from google.cloud import storage
 import os
+import json
 import time
 from selenium import webdriver
 from bs4 import BeautifulSoup
@@ -11,8 +12,12 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email import encoders
 
+# credentials
+creds_path = "blob_storage_gcp_key.json"
+with open(creds_path, "w") as file: json.dump(json.loads(os.getenv("GCP_BLOB_KEY_JSON")), file)
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = creds_path
+
 # client
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "blob-storage-gcp-bc807e0adb48.json"
 storage_client = storage.Client()
 
 # list blobs in bucket
@@ -130,5 +135,5 @@ for file_path in files_to_attach:
 
 # send
 with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-    server.login(sender_email, "uhfu cppa sxgh bwpr")
+    server.login(sender_email, os.getenv("EMAIL_PASS"))
     if len(files_to_attach) > 0: server.sendmail(sender_email, recivr_email, msg.as_string())
