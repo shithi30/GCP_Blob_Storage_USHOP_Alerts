@@ -67,6 +67,7 @@ packshots_historical = list_blobs("bucket_packshots_historical")
 # start fresh
 empty_bucket("bucket_packshots_new")
 empty_bucket("bucket_packshots_present")
+print("Deleted")
 
 # link
 pg = 0
