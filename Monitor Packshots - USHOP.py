@@ -88,7 +88,7 @@ while(1):
     
     # scrape
     # for i in range(0, sku_count):
-    for i in range(0, 3):
+    for i in range(0, 5):
         
         # url
         try: url = "https:" + soup[i]["src"]
