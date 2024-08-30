@@ -88,7 +88,7 @@ while(1):
     
     # scrape
     # for i in range(0, sku_count):
-    for i in range(0, 5):
+    for i in range(0, 7):
         
         # url
         try: url = "https:" + soup[i]["src"]
@@ -140,7 +140,7 @@ for file_path in files_to_attach:
     part.add_header("Content-Disposition", f"attachment; filename= {os.path.basename(file_path)}")
     msg.attach(part)
 
-# # send
-# with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-#     server.login(sender_email, os.getenv("EMAIL_PASS"))
-#     if len(files_to_attach) > 0: server.sendmail(sender_email, recivr_email, msg.as_string())
+# send
+with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+    server.login(sender_email, os.getenv("EMAIL_PASS"))
+    if len(files_to_attach) > 0: server.sendmail(sender_email, recivr_email, msg.as_string())
