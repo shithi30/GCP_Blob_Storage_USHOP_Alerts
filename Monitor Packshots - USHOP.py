@@ -82,12 +82,10 @@ while(1):
     # page
     sku_count = len(soup)
     if sku_count == 0: break
-    # if pg == 2: break
     print("Scraping from page: " + str(pg))
     
     # scrape
     for i in range(0, sku_count):
-    # for i in range(0, 10):
         
         # url
         try: url = "https:" + soup[i]["src"]
