@@ -84,10 +84,8 @@ while(1):
     if sku_count == 0: break
     print("Scraping from page: " + str(pg))
     
-    # scrape
+    # url
     for i in range(0, sku_count):
-        
-        # url
         try: url = "https:" + soup[i]["src"]
         except: continue
 
