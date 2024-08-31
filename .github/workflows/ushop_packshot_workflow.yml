@@ -3,7 +3,7 @@ name: Python Script Schedule Run
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 14,28 * *"
+    - cron: "0 13 1,11,21 * *"
     
 jobs:
   scrape:
