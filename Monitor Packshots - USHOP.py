@@ -48,7 +48,7 @@ def upload_url_blob(url, bucket_name, blob_name):
     blob = bucket.blob(blob_name)
     blob.upload_from_string(image_data, content_type = "image/jpg")
 
-# identical blobs
+# if blobs identical
 def compare_blobs(bucket_name1, blob_name1, bucket_name2, blob_name2):
     bucket1, bucket2 = storage_client.bucket(bucket_name1), storage_client.bucket(bucket_name2)
     image1, image2 = bucket1.get_blob(blob_name1), bucket2.get_blob(blob_name2)
@@ -64,7 +64,7 @@ def download_blob(bucket_name, source_blob_name, destination_file_name):
 # existing packshots
 packshots_historical = list_blobs("bucket_packshots_historical")
 
-# start fresh
+# start afresh
 empty_bucket("bucket_packshots_new")
 empty_bucket("bucket_packshots_present")
 
