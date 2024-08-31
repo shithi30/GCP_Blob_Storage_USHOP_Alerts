@@ -1,4 +1,4 @@
-This repo. notifies Unilever's brand-team as soon as a new packshot/hero image appears on its USHOPBD Shopify portal, in order to ensure quality online presence.<br><br>
+This repo. notifies Unilever's brand-team soon after a new packshot/hero image appears on its USHOPBD Shopify portal, in order to ensure quality online presence.<br><br>
 Tech stack: ```Google Cloud Storage``` ```MD5 Hashing``` ```BeautifulSoup/bs4``` ```Cron job``` ```Linux - Ubuntu``` ```GitHub Actions```<br>
 ### Output Notifications
 <p align="center">
