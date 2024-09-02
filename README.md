@@ -2,7 +2,7 @@ This repo. notifies Unilever's brand-team soon after a new packshot/hero image a
 Tech stack: ```Google Cloud Storage``` ```MD5 Hashing``` ```BeautifulSoup/bs4``` ```Cron job``` ```Linux - Ubuntu``` ```GitHub Actions```<br>
 ### Output Notifications
 <p align="center">
-  <img width="415" alt="c5" src="https://github.com/user-attachments/assets/08a9c784-4d79-456d-af86-ee3bed847ec1"><br>
+  <img width="410" alt="c5" src="https://github.com/user-attachments/assets/08a9c784-4d79-456d-af86-ee3bed847ec1"><br>
 </p>
 
 ### Why Google Cloud Storage?
