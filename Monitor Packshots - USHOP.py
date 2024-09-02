@@ -48,13 +48,6 @@ def upload_url_blob(url, bucket_name, blob_name):
     blob = bucket.blob(blob_name)
     blob.upload_from_string(image_data, content_type = "image/jpg")
 
-# if blobs identical
-def compare_blobs(bucket_name1, blob_name1, bucket_name2, blob_name2):
-    bucket1, bucket2 = storage_client.bucket(bucket_name1), storage_client.bucket(bucket_name2)
-    image1, image2 = bucket1.get_blob(blob_name1), bucket2.get_blob(blob_name2)
-    if image1.md5_hash == image2.md5_hash: return True
-    else: return False
-
 # download blob
 def download_blob(bucket_name, source_blob_name, destination_file_name):
     bucket = storage_client.bucket(bucket_name)
@@ -63,6 +56,7 @@ def download_blob(bucket_name, source_blob_name, destination_file_name):
 
 # existing packshots
 packshots_historical = list_blobs("bucket_packshots_historical")
+packshots_old_md5val = [storage_client.bucket("bucket_packshots_historical").get_blob(packshot_old).md5_hash for packshot_old in packshots_historical]
 
 # start afresh
 empty_bucket("bucket_packshots_new")
@@ -97,8 +91,9 @@ while(1):
 
         # check if new
         if_found = 0
-        for packshot_old in packshots_historical:
-            if compare_blobs("bucket_packshots_historical", packshot_old, "bucket_packshots_present", packshot_now):
+        packshot_new_md5val = storage_client.bucket("bucket_packshots_present").get_blob(packshot_now).md5_hash
+        for packshot_old_md5val in packshots_old_md5val:
+            if packshot_old_md5val == packshot_new_md5val:
                 if_found = 1
                 break
 
