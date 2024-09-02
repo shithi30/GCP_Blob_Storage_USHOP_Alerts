@@ -2,12 +2,12 @@ This repo. notifies Unilever's brand-team soon after a new packshot/hero image a
 Tech stack: ```Google Cloud Storage``` ```MD5 Hashing``` ```BeautifulSoup/bs4``` ```Cron job``` ```Linux - Ubuntu``` ```GitHub Actions```<br>
 ### Output Notifications
 <p align="center">
-  <img width="400" alt="c5" src="https://github.com/user-attachments/assets/03e48fde-8c6e-46fb-9472-db19a005b751"><br>
+  <img width="415" alt="c5" src="https://github.com/user-attachments/assets/08a9c784-4d79-456d-af86-ee3bed847ec1"><br>
 </p>
 
 ### Why Google Cloud Storage?
 <p align="center">
-  <img width="908" alt="c5" src="https://github.com/user-attachments/assets/c49db22d-aef9-45d8-a9e7-e09e2cead434"><br>
+  <img width="920" alt="c5" src="https://github.com/user-attachments/assets/c49db22d-aef9-45d8-a9e7-e09e2cead434"><br>
 </p>
 
 - GCP's blob storage helped store image data as binary large objects (blobs) coveniently among buckets
