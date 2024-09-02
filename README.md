@@ -10,5 +10,5 @@ Tech stack: ```Google Cloud Storage``` ```MD5 Hashing``` ```BeautifulSoup/bs4```
   <img width="920" alt="c5" src="https://github.com/user-attachments/assets/c49db22d-aef9-45d8-a9e7-e09e2cead434"><br>
 </p>
 
-- GCP's blob storage helped store image data as binary large objects (blobs) coveniently among buckets
-- MD5 hash function, applied on blobs, aided in detection of newer packshot/hero images
+- GCP's blob storage helped store image data as binary large objects (blobs) coveniently among buckets.
+- MD5 hash function, applied on blobs, aided in detection of newer packshot/hero images.
